@@ -7,7 +7,7 @@
             <li v-for="(technology, index) in backendTechnologies" v-bind:key="index" >{{technology}}</li>
         </ul>
         <div>
-            <button @click="showEmail" > {{text_botao}} </button>
+            <button @click="showEmail"> {{text_botao}} </button>
         </div>
         <p>Utilizo as seguintes tecnologias para front-end</p>
         <ul>
@@ -27,11 +27,13 @@
         components: {
             Picture
         },
+        props: {
+            email: String,
+            esta_trabalhando: Boolean
+        },
         data () {
             return {
-                esta_trabalhando: false,
                 mostrar_email: false,
-                email: "davi@gmail.com",
                 meu_link: "https://www.google.com",
                 text_botao: "Mostrar email",
                 backendTechnologies: ['javascript', 'php', 'python'],
